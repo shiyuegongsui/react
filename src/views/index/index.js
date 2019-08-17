@@ -1,4 +1,6 @@
 import React, { Component, Fragment } from 'react';
+import { Link } from "react-router-dom";
+
 import './index.scss';
 
 import ListItem from '@components/listItem/listItem.js'
@@ -86,6 +88,18 @@ class App extends Component {
                         })
                     }
                 </ul> */}
+
+                <ul>
+                    <li> <Link to="/index">首页</Link> </li>
+                    <li><Link to="/page2">子页面</Link> </li>
+                    <li><Link to="/page3/123">传参的子页面</Link> </li>
+                    {/* 
+                        动态传参
+                       <li><Link  to={'/list/'+item.uid}>传参的子页面</Link> </li> 
+                    */}
+                </ul>
+
+
                 <div>
                     <p>生命周期</p>
                     <img src={require('@/assets/images/React1901.png')} alt="生命周期" />
@@ -106,10 +120,10 @@ class App extends Component {
         //  如果返回false的话   不会继续渲染
         return true;
     }
-    componentWillUpdate(){
+    componentWillUpdate() {
         console.log('5 componentWillUpdate---组件更新前，shouldComponentUpdate函数之后执行')
     }
-    componentDidUpdate(){
+    componentDidUpdate() {
         console.log('6 componentDidUpdate----组件更新之后执行')
     }
     // 事件
