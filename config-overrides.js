@@ -10,8 +10,10 @@ function resolve(dir) {
 module.exports = function override(config, env) {
     config.resolve.alias = {
         '@': resolve('src'),
-        '@views': resolve('src/views')
-
+        '@views': resolve('src/views'),
+        '@styles': resolve('src/styles'),
+        '@components': resolve('src/components'),
+        '@utils': resolve('src/utils')
     }
     return config;
 }
