@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, Link } from 'react-router-dom'
+import { BrowserRouter, Switch, Route, Link, Redirect } from 'react-router-dom'
 
 import asyncComponent from '@/utils/asyncComponent';
 const child = asyncComponent(() => import("@/views/page2/child"))
@@ -20,12 +20,15 @@ class Page2 extends Component {
                     <li><Link to="/page2">子页面</Link> </li>
                     <li><Link to="/page3/123">传参的子页面</Link> </li>
 
-                    <li><Link to="/page2/child">子页面啦</Link> </li>
                     <li><Link to="/page2/child2">子页面啦22</Link> </li>
                 </ul>
-                <Route path="/page2/child/" component={child} />
-                <Route path="/page2/child2/" component={child2} />
-
+                <BrowserRouter>
+                    <Switch>
+                        <Route path="/page2/child" component={child} />
+                        <Route path="/page2/child2" component={child2} />
+                        <Redirect exact from='/page2' to='/page2/child' />
+                    </Switch>
+                </BrowserRouter>
             </div>
         )
     }
