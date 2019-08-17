@@ -58,7 +58,6 @@ class App extends Component {
     componentWillMount() {
         console.log('1 componentWillMount----组件将要挂载到页面的时刻')
     }
-
     render() {
         console.log('2 render---组件挂载中.......')
         return (
@@ -90,7 +89,6 @@ class App extends Component {
                 <div>
                     <p>生命周期</p>
                     <img src={require('@/assets/images/React1901.png')} alt="生命周期" />
-
                 </div>
             </Fragment>
         )
@@ -140,4 +138,5 @@ class App extends Component {
         })
     }
 }
+
 export default App;
