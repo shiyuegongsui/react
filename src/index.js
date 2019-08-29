@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Route from './router'
 
+import './plugins/ajax.js'
+
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(<Route />, document.getElementById('root'));

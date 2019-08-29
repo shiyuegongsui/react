@@ -134,6 +134,7 @@ class App extends Component {
     }
     //添加list
     addList() {
+        console.log(this.$ajax);
         this.setState({
             list: [...this.state.list, this.state.inputValue]
         }, () => {
