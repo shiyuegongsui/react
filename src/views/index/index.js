@@ -47,13 +47,22 @@ import ListItem from '@components/listItem/listItem.js'
 //     <ListItem  deleteItem={this.deleteItem.bind(this)}/> 
 
 
-// 知识点7： 构造函数中绑定 在组件中使用则不需要bind(this) 
-    //（有言曰：构造函数中绑定性能会高一些，特别是在高级组件开发中，会有很大的作用）
+// 知识点7： 绑定事件不用bind(this)的两种方式
+// <input
+//     value={this.state.inputValue}
+//     onChange={this.inputChange}
+// />
+
+// 方法一：构造函数中绑定 在组件中使用则不需要bind(this) 
+
     // this.inputChange=this.inputChange.bind(this);
-    // <input
-    //     value={this.state.inputValue}
-    //     onChange={this.inputChange}
-    // />
+
+    //（有言曰：构造函数中绑定性能会高一些，特别是在高级组件开发中，会有很大的作用）
+
+// 方法二：使用箭头函数
+    // inputChange = (e) => {}
+
+
 
 
 class App extends Component {
