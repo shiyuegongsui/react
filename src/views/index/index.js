@@ -47,6 +47,13 @@ import ListItem from '@components/listItem/listItem.js'
 //     <ListItem  deleteItem={this.deleteItem.bind(this)}/> 
 
 
+// 知识点7： 构造函数中绑定 在组件中使用则不需要bind(this) 
+    //（有言曰：构造函数中绑定性能会高一些，特别是在高级组件开发中，会有很大的作用）
+    // this.inputChange=this.inputChange.bind(this);
+    // <input
+    //     value={this.state.inputValue}
+    //     onChange={this.inputChange}
+    // />
 
 
 class App extends Component {
@@ -56,6 +63,9 @@ class App extends Component {
             inputValue: '', // input中的值
             list: ["我是测试啦1", "我是测试啦2"]    //服务列表
         }
+
+        // 构造函数中绑定 在组件中使用则不需要bind(this) 
+        // this.inputChange=this.inputChange.bind(this);
     }
     componentWillMount() {
         console.log('1 componentWillMount----组件将要挂载到页面的时刻')
